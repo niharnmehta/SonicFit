@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E33093018B276E000EE320D /* SFMyRoundRectButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E33092F18B276E000EE320D /* SFMyRoundRectButton.m */; };
 		2E8660061895516800227BA2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E8660051895516800227BA2 /* Foundation.framework */; };
 		2E8660081895516800227BA2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E8660071895516800227BA2 /* CoreGraphics.framework */; };
 		2E86600A1895516800227BA2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E8660091895516800227BA2 /* UIKit.framework */; };
@@ -43,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2E33092E18B276E000EE320D /* SFMyRoundRectButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFMyRoundRectButton.h; sourceTree = "<group>"; };
+		2E33092F18B276E000EE320D /* SFMyRoundRectButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFMyRoundRectButton.m; sourceTree = "<group>"; };
 		2E8660021895516800227BA2 /* SonicFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SonicFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E8660051895516800227BA2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2E8660071895516800227BA2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -154,6 +157,8 @@
 				2E8660391895518900227BA2 /* SFEarTrainingItemsViewController.m */,
 				2E86603A1895518900227BA2 /* SFMainViewController.h */,
 				2E8660451895526A00227BA2 /* SFMainViewController.m */,
+				2E33092E18B276E000EE320D /* SFMyRoundRectButton.h */,
+				2E33092F18B276E000EE320D /* SFMyRoundRectButton.m */,
 				2E8660171895516800227BA2 /* Images.xcassets */,
 			);
 			name = Sources;
@@ -230,6 +235,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = FUHSD;
 				TargetAttributes = {
+					2E8660011895516800227BA2 = {
+						DevelopmentTeam = 9RFB72M4AU;
+					};
 					2E86601C1895516800227BA2 = {
 						TestTargetID = 2E8660011895516800227BA2;
 					};
@@ -284,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E8660901896174500227BA2 /* SFEarTrainingExercise.m in Sources */,
+				2E33093018B276E000EE320D /* SFMyRoundRectButton.m in Sources */,
 				2E86603C1895518900227BA2 /* SFEarTrainingExerciseViewController.m in Sources */,
 				2E86608C1895DE1A00227BA2 /* SFProfileViewController.m in Sources */,
 				2E8660121895516800227BA2 /* main.m in Sources */,
@@ -409,10 +418,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SonicFit/SonicFit-Prefix.pch";
 				INFOPLIST_FILE = "SonicFit/SonicFit-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -422,10 +436,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SonicFit/SonicFit-Prefix.pch";
 				INFOPLIST_FILE = "SonicFit/SonicFit-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -491,6 +510,7 @@
 				2E8660301895516800227BA2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2E8660311895516800227BA2 /* Build configuration list for PBXNativeTarget "SonicFitTests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +519,7 @@
 				2E8660331895516800227BA2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

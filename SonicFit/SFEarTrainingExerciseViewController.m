@@ -8,6 +8,11 @@
 
 #import "SFEarTrainingExerciseViewController.h"
 #import "SFEarTrainingExercise.h"
+#import "SFMyRoundRectButton.h"
+
+#define kStdButtonWidth		50.0
+#define kStdButtonHeight	35.0
+#define kViewTag			1		// for tagging our embedded controls for removal at cell recycle time
 
 @interface SFEarTrainingExerciseViewController()
 @property (weak, nonatomic) IBOutlet UILabel *userEnteredPrompt;
@@ -25,6 +30,8 @@
 
 - (IBAction)notePressed:(UIButton *)sender
 {
+    AudioServicesPlaySystemSound(1100);
+    
     if (self.currentNoteCount == self.currentExercise.noteCount)
     {
         // ignore users input
@@ -68,6 +75,8 @@
 
 - (IBAction)playNotes:(id)sender
 {
+    [self cleanupInputs];
+
     AudioServicesPlaySystemSound(self.currentExercise.noteSound);
 }
 
@@ -144,17 +153,61 @@
     UINavigationItem *navItem = self.navigationItem;
     navItem.title = [NSString stringWithFormat:@"%@ %d", @"Level", self.level];
     
+    for (UIView *subview in self.view.subviews)
+    {
+        NSLog(@"subview for buttons: %@", subview);
+        if ([subview isMemberOfClass:[UIView class]])
+        {
+            [self addButtonsLevel2:subview];
+        }
+    }
+
     // setup the starting exercise
     self.currentExercise = [[SFEarTrainingExercise alloc] initWithItemName:@"note1001.m4a"
                                                                  noteCount:4
-                                                                    answer:@"SOL LA SOL MI"];
+                                                                    answer:@"DO RE MI FA"];
     [self cleanupInputs];    
+}
+
+- (void)addButtonsLevel2:(UIView *)view
+{
+    CGFloat y = 15.0;
+    NSArray *noteTitleArray = [NSArray arrayWithObjects:@"LA", @"SOL", @"FA", @"MI", @"RE", @"DO", @"TI", nil];
+    for (int i = 0; i < 7; i++)
+    {
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
+        CALayer *btnLayer = [button layer];
+        [btnLayer setMasksToBounds:YES];
+        [btnLayer setCornerRadius:20.0f];
+		button.frame = CGRectMake(0.0, y, kStdButtonWidth, kStdButtonHeight);
+        y += (kStdButtonHeight + 10);
+        button.titleLabel.font = [UIFont systemFontOfSize:17];
+        button.titleLabel.textColor = [UIColor redColor];
+        NSString *title = [noteTitleArray objectAtIndex:i];
+		[button setTitle:title forState:UIControlStateNormal];
+		[button addTarget:self action:@selector(notePressed:) forControlEvents:UIControlEventTouchUpInside];
+        button.backgroundColor = [UIColor cyanColor];
+		
+		button.tag = kViewTag;	// tag this view for later so we can remove it from recycled table cells
+        [view addSubview:button];
+	}
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewDidLayoutSubviews
+{
+    for (UIView *subview in self.view.subviews)
+    {
+        if ([subview hasAmbiguousLayout])
+        {
+            NSLog(@"Ambiguous: %@", subview);
+        }
+    }
 }
 
 @end
