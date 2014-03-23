@@ -7,8 +7,54 @@
 //
 
 #import "SFEarTrainingExercise.h"
+#import "SFNote.h"
 
 @implementation SFEarTrainingExercise
+
+- (void)playNotes
+{
+    // Give the instance variables initial values
+    int count = self.notes.count;
+    for (int i = 0; i < count; i++)
+    {
+        SFNote *note = [self.notesDictionary objectForKey:[self.notes objectAtIndex:i]];
+        AudioServicesPlaySystemSound(note.noteSound);
+        usleep(700000);
+    }
+}
+
+- (instancetype)initWithNotes:(NSArray *)notes
+              notesDictionary:(NSDictionary *)notesDictionary;
+{
+    // Call the superclass's designated initializer
+    self = [super init];
+    // Did the superclass's designated initializer succeed?
+    if (self) {
+        // Give the instance variables initial values
+        self.notesDictionary = notesDictionary;
+        self.notes = notes;
+        
+        int count = notes.count;
+        NSString *answer;
+        for (int i = 0; i < count; i++)
+        {
+            NSString *note = [notes objectAtIndex:i];
+            if (count == 0)
+            {
+                answer = note;
+            }
+            else
+            {
+                answer = [NSString stringWithFormat:@"%@ %@", answer, note];
+            }
+        }
+        self.noteCount = count;
+        self.answer = answer;
+    }
+    
+    // Return the address of the newly initialized object
+    return self;
+}
 
 - (instancetype)initWithItemName:(NSString *)soundFile
                        noteCount:(int)noteCount

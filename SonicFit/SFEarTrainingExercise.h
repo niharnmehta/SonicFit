@@ -14,7 +14,14 @@
                        noteCount:(int)noteCount
                           answer:(NSString *)answer;
 
+- (instancetype)initWithNotes:(NSArray *)notes
+              notesDictionary:(NSDictionary *)notesDictionary;
+
+- (void)playNotes;
+
 @property (nonatomic, copy) NSString *soundFileName;
+@property (nonatomic, copy) NSArray *notes;
+@property (nonatomic) NSDictionary *notesDictionary;
 @property (nonatomic) SystemSoundID noteSound;
 @property (nonatomic, copy) NSString *answer;
 @property (nonatomic) int noteCount;

@@ -9,6 +9,7 @@
 #import "SFEarTrainingExerciseViewController.h"
 #import "SFEarTrainingExercise.h"
 #import "SFMyRoundRectButton.h"
+#import "SFNote.h"
 
 #define kStdButtonWidth		50.0
 #define kStdButtonHeight	35.0
@@ -21,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *correctNotes;
 
 @property (nonatomic, readwrite) int currentNoteCount;
+@property (nonatomic) NSDictionary *notesDictionary;
 @end
 
 
@@ -46,7 +48,7 @@
     }
     else
     {
-        usersAnswer = [NSString stringWithFormat:@"%@ %@", self.userEnteredNotes.text,                sender.titleLabel.text];
+        usersAnswer = [NSString stringWithFormat:@"%@ %@", self.userEnteredNotes.text, sender.titleLabel.text];
     }
     self.userEnteredNotes.text = usersAnswer;
     self.currentNoteCount++;
@@ -77,7 +79,8 @@
 {
     [self cleanupInputs];
 
-    AudioServicesPlaySystemSound(self.currentExercise.noteSound);
+    // AudioServicesPlaySystemSound(self.currentExercise.noteSound);
+    [self.currentExercise playNotes];
 }
 
 - (void)cleanupInputs
@@ -161,12 +164,31 @@
             [self addButtonsLevel2:subview];
         }
     }
+    
+    // create notes array
+    [self createNotesDictionary];
 
     // setup the starting exercise
-    self.currentExercise = [[SFEarTrainingExercise alloc] initWithItemName:@"note1001.m4a"
-                                                                 noteCount:4
-                                                                    answer:@"DO RE MI FA"];
-    [self cleanupInputs];    
+    NSArray *notes = [NSArray arrayWithObjects:@"LA", @"SOL", @"FA", nil];
+    self.currentExercise = [[SFEarTrainingExercise alloc] initWithNotes:notes
+                                                        notesDictionary:self.notesDictionary];
+    [self cleanupInputs];
+}
+
+- (void)createNotesDictionary
+{
+    NSMutableDictionary *notes = [NSMutableDictionary new];
+    NSArray *noteTitleArray = [NSArray arrayWithObjects:@"LA", @"SOL", @"FA", @"MI", @"RE", @"DO", @"TI", nil];
+    NSArray *noteSoundArray = [NSArray arrayWithObjects:@"la.wav", @"sol.wav", @"fa.wav", @"mi.wav", @"re.wav", @"do.wav", @"ti.wav", nil];
+    for (int i = 0; i < 7; i++)
+    {
+        NSString *title = [noteTitleArray objectAtIndex:i];
+        NSString *soundFile = [noteSoundArray objectAtIndex:i];
+        SFNote *note = [[SFNote alloc] initWithNoteName:title
+                                              soundFile:soundFile];
+        [notes setObject:note forKey:note.noteName];
+    }
+    self.notesDictionary = notes;
 }
 
 - (void)addButtonsLevel2:(UIView *)view
