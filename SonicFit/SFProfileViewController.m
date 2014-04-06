@@ -35,8 +35,8 @@
     [super viewDidLoad];
     
     // Do any additional setup after loading the view from its nib.
-    self.nameField.text = @"N Mehta";
-    self.emailField.text = @"nihar.mehta@gmail.com";
+    self.nameField.text = @"Prachi Mehta";
+    self.emailField.text = @"prachi.mehta@gmail.com";
 }
 
 - (void)didReceiveMemoryWarning

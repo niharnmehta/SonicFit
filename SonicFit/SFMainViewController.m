@@ -9,6 +9,7 @@
 #import "SFMainViewController.h"
 #import "SFEarTrainingItemsViewController.h"
 #import "SFProfileViewController.h"
+#import "SFEarTrainingExerciseViewController.h"
 
 @interface SFMainViewController ()
 
@@ -25,8 +26,18 @@
     }
     else if (indexPath.row == 1)
     {
-        SFEarTrainingItemsViewController *etItemsViewController = [[SFEarTrainingItemsViewController alloc] init];
-        [self.navigationController pushViewController:etItemsViewController animated:YES];
+        SFEarTrainingExerciseViewController *exerciseVc = [[SFEarTrainingExerciseViewController alloc] initWithNibName:@"SFEarTrainingExerciseLevel2" bundle:nil];
+        exerciseVc.level = 1;
+        [self.navigationController pushViewController:exerciseVc animated:YES];
+
+//        SFEarTrainingItemsViewController *etItemsViewController = [[SFEarTrainingItemsViewController alloc] init];
+//        [self.navigationController pushViewController:etItemsViewController animated:YES];
+    }
+    else if (indexPath.row == 2)
+    {
+        SFEarTrainingExerciseViewController *exerciseVc = [[SFEarTrainingExerciseViewController alloc] initWithNibName:@"SFEarTrainingExerciseLevel2" bundle:nil];
+        exerciseVc.level = 2;
+        [self.navigationController pushViewController:exerciseVc animated:YES];
     }
 }
 
@@ -44,7 +55,11 @@
     }
     else if (indexPath.row == 1)
     {
-        cell.textLabel.text = @"Ear Training";
+        cell.textLabel.text = @"Ear Training Level 1";
+    }
+    else if (indexPath.row == 2)
+    {
+        cell.textLabel.text = @"Ear Training Level 2";
     }
 
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
@@ -53,7 +68,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 2;
+    return 3;
 }
 
 - (instancetype) init

@@ -22,7 +22,6 @@
 @property (nonatomic, copy) NSString *soundFileName;
 @property (nonatomic, copy) NSArray *notes;
 @property (nonatomic) NSDictionary *notesDictionary;
-@property (nonatomic) SystemSoundID noteSound;
 @property (nonatomic, copy) NSString *answer;
 @property (nonatomic) int noteCount;
 

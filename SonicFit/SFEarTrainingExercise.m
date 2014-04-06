@@ -39,7 +39,7 @@
         for (int i = 0; i < count; i++)
         {
             NSString *note = [notes objectAtIndex:i];
-            if (count == 0)
+            if (i == 0)
             {
                 answer = note;
             }
@@ -76,7 +76,7 @@
         {
             NSURL *noteURL = [NSURL fileURLWithPath:notePath];
             AudioServicesCreateSystemSoundID((__bridge CFURLRef)noteURL, &noteSoundId);
-            self.noteSound = noteSoundId;
+            // self.noteSound = noteSoundId;
         }
         else
         {

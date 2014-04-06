@@ -7,14 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2E33093018B276E000EE320D /* SFMyRoundRectButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E33092F18B276E000EE320D /* SFMyRoundRectButton.m */; };
 		2E46E23218DE72E600733ADB /* note1001.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 2E46E22A18DE72E500733ADB /* note1001.m4a */; };
 		2E46E23318DE72E600733ADB /* do.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E46E22B18DE72E500733ADB /* do.wav */; };
 		2E46E23418DE72E600733ADB /* fa.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E46E22C18DE72E500733ADB /* fa.wav */; };
 		2E46E23518DE72E600733ADB /* la.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E46E22D18DE72E600733ADB /* la.wav */; };
 		2E46E23618DE72E600733ADB /* mi.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E46E22E18DE72E600733ADB /* mi.wav */; };
 		2E46E23718DE72E600733ADB /* re.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E46E22F18DE72E600733ADB /* re.wav */; };
-		2E46E23918DE72E600733ADB /* ti.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E46E23118DE72E600733ADB /* ti.wav */; };
+		2E46E23918DE72E600733ADB /* small-ti.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2E46E23118DE72E600733ADB /* small-ti.wav */; };
+		2E578EBF18F0EAFC0037C8A9 /* 5D high RE.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2E578EB518F0EAFC0037C8A9 /* 5D high RE.mp3 */; };
+		2E578EC018F0EAFC0037C8A9 /* 5C high DO.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2E578EB618F0EAFC0037C8A9 /* 5C high DO.mp3 */; };
+		2E578EC118F0EAFC0037C8A9 /* 5B TI.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2E578EB718F0EAFC0037C8A9 /* 5B TI.mp3 */; };
+		2E578EC218F0EAFC0037C8A9 /* 5A LA.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2E578EB818F0EAFC0037C8A9 /* 5A LA.mp3 */; };
+		2E578EC318F0EAFC0037C8A9 /* 4G SOL.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2E578EB918F0EAFC0037C8A9 /* 4G SOL.mp3 */; };
+		2E578EC418F0EAFC0037C8A9 /* 4F FA.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2E578EBA18F0EAFC0037C8A9 /* 4F FA.mp3 */; };
+		2E578EC518F0EAFC0037C8A9 /* 4E MI.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2E578EBB18F0EAFC0037C8A9 /* 4E MI.mp3 */; };
+		2E578EC618F0EAFC0037C8A9 /* 4D RE.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2E578EBC18F0EAFC0037C8A9 /* 4D RE.mp3 */; };
+		2E578EC718F0EAFC0037C8A9 /* 4C DO.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2E578EBD18F0EAFC0037C8A9 /* 4C DO.mp3 */; };
+		2E578EC818F0EAFC0037C8A9 /* 4B low TI.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2E578EBE18F0EAFC0037C8A9 /* 4B low TI.mp3 */; };
 		2E8660061895516800227BA2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E8660051895516800227BA2 /* Foundation.framework */; };
 		2E8660081895516800227BA2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E8660071895516800227BA2 /* CoreGraphics.framework */; };
 		2E86600A1895516800227BA2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E8660091895516800227BA2 /* UIKit.framework */; };
@@ -39,6 +48,7 @@
 		2E8660901896174500227BA2 /* SFEarTrainingExercise.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E86608F1896174500227BA2 /* SFEarTrainingExercise.m */; };
 		2EE854FF18DE87C6002B20AE /* SFNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EE854FE18DE87C6002B20AE /* SFNote.m */; };
 		2EE8550118DEA8E1002B20AE /* sol.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2EE8550018DEA8E1002B20AE /* sol.wav */; };
+		2EE8550418DEC2C2002B20AE /* SFExerciseNotes.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EE8550318DEC2C2002B20AE /* SFExerciseNotes.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,15 +62,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2E33092E18B276E000EE320D /* SFMyRoundRectButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFMyRoundRectButton.h; sourceTree = "<group>"; };
-		2E33092F18B276E000EE320D /* SFMyRoundRectButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFMyRoundRectButton.m; sourceTree = "<group>"; };
 		2E46E22A18DE72E500733ADB /* note1001.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = note1001.m4a; path = ../Resources/note1001.m4a; sourceTree = "<group>"; };
 		2E46E22B18DE72E500733ADB /* do.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = do.wav; path = ../Resources/do.wav; sourceTree = "<group>"; };
 		2E46E22C18DE72E500733ADB /* fa.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = fa.wav; path = ../Resources/fa.wav; sourceTree = "<group>"; };
 		2E46E22D18DE72E600733ADB /* la.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = la.wav; path = ../Resources/la.wav; sourceTree = "<group>"; };
 		2E46E22E18DE72E600733ADB /* mi.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = mi.wav; path = ../Resources/mi.wav; sourceTree = "<group>"; };
 		2E46E22F18DE72E600733ADB /* re.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = re.wav; path = ../Resources/re.wav; sourceTree = "<group>"; };
-		2E46E23118DE72E600733ADB /* ti.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = ti.wav; path = ../Resources/ti.wav; sourceTree = "<group>"; };
+		2E46E23118DE72E600733ADB /* small-ti.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "small-ti.wav"; path = "../Resources/small-ti.wav"; sourceTree = "<group>"; };
+		2E578EB518F0EAFC0037C8A9 /* 5D high RE.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "5D high RE.mp3"; path = "../../../Downloads/CMSoundFiles (1)/5D high RE.mp3"; sourceTree = "<group>"; };
+		2E578EB618F0EAFC0037C8A9 /* 5C high DO.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "5C high DO.mp3"; path = "../../../Downloads/CMSoundFiles (1)/5C high DO.mp3"; sourceTree = "<group>"; };
+		2E578EB718F0EAFC0037C8A9 /* 5B TI.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "5B TI.mp3"; path = "../../../Downloads/CMSoundFiles (1)/5B TI.mp3"; sourceTree = "<group>"; };
+		2E578EB818F0EAFC0037C8A9 /* 5A LA.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "5A LA.mp3"; path = "../../../Downloads/CMSoundFiles (1)/5A LA.mp3"; sourceTree = "<group>"; };
+		2E578EB918F0EAFC0037C8A9 /* 4G SOL.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "4G SOL.mp3"; path = "../../../Downloads/CMSoundFiles (1)/4G SOL.mp3"; sourceTree = "<group>"; };
+		2E578EBA18F0EAFC0037C8A9 /* 4F FA.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "4F FA.mp3"; path = "../../../Downloads/CMSoundFiles (1)/4F FA.mp3"; sourceTree = "<group>"; };
+		2E578EBB18F0EAFC0037C8A9 /* 4E MI.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "4E MI.mp3"; path = "../../../Downloads/CMSoundFiles (1)/4E MI.mp3"; sourceTree = "<group>"; };
+		2E578EBC18F0EAFC0037C8A9 /* 4D RE.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "4D RE.mp3"; path = "../../../Downloads/CMSoundFiles (1)/4D RE.mp3"; sourceTree = "<group>"; };
+		2E578EBD18F0EAFC0037C8A9 /* 4C DO.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "4C DO.mp3"; path = "../../../Downloads/CMSoundFiles (1)/4C DO.mp3"; sourceTree = "<group>"; };
+		2E578EBE18F0EAFC0037C8A9 /* 4B low TI.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "4B low TI.mp3"; path = "../../../Downloads/CMSoundFiles (1)/4B low TI.mp3"; sourceTree = "<group>"; };
 		2E8660021895516800227BA2 /* SonicFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SonicFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E8660051895516800227BA2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2E8660071895516800227BA2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -95,6 +113,8 @@
 		2EE854FD18DE87C6002B20AE /* SFNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFNote.h; sourceTree = "<group>"; };
 		2EE854FE18DE87C6002B20AE /* SFNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFNote.m; sourceTree = "<group>"; };
 		2EE8550018DEA8E1002B20AE /* sol.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = sol.wav; path = ../Resources/sol.wav; sourceTree = "<group>"; };
+		2EE8550218DEC2C2002B20AE /* SFExerciseNotes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFExerciseNotes.h; sourceTree = "<group>"; };
+		2EE8550318DEC2C2002B20AE /* SFExerciseNotes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFExerciseNotes.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +183,8 @@
 				2E8660341895518900227BA2 /* SFAppDelegate.m */,
 				2EE854FD18DE87C6002B20AE /* SFNote.h */,
 				2EE854FE18DE87C6002B20AE /* SFNote.m */,
+				2EE8550218DEC2C2002B20AE /* SFExerciseNotes.h */,
+				2EE8550318DEC2C2002B20AE /* SFExerciseNotes.m */,
 				2E86608E1896174500227BA2 /* SFEarTrainingExercise.h */,
 				2E86608F1896174500227BA2 /* SFEarTrainingExercise.m */,
 				2E8660351895518900227BA2 /* SFEarTrainingExerciseViewController.h */,
@@ -176,8 +198,6 @@
 				2E8660391895518900227BA2 /* SFEarTrainingItemsViewController.m */,
 				2E86603A1895518900227BA2 /* SFMainViewController.h */,
 				2E8660451895526A00227BA2 /* SFMainViewController.m */,
-				2E33092E18B276E000EE320D /* SFMyRoundRectButton.h */,
-				2E33092F18B276E000EE320D /* SFMyRoundRectButton.m */,
 				2E8660171895516800227BA2 /* Images.xcassets */,
 			);
 			name = Sources;
@@ -187,6 +207,16 @@
 		2E86600C1895516800227BA2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2E578EB518F0EAFC0037C8A9 /* 5D high RE.mp3 */,
+				2E578EB618F0EAFC0037C8A9 /* 5C high DO.mp3 */,
+				2E578EB718F0EAFC0037C8A9 /* 5B TI.mp3 */,
+				2E578EB818F0EAFC0037C8A9 /* 5A LA.mp3 */,
+				2E578EB918F0EAFC0037C8A9 /* 4G SOL.mp3 */,
+				2E578EBA18F0EAFC0037C8A9 /* 4F FA.mp3 */,
+				2E578EBB18F0EAFC0037C8A9 /* 4E MI.mp3 */,
+				2E578EBC18F0EAFC0037C8A9 /* 4D RE.mp3 */,
+				2E578EBD18F0EAFC0037C8A9 /* 4C DO.mp3 */,
+				2E578EBE18F0EAFC0037C8A9 /* 4B low TI.mp3 */,
 				2E46E22A18DE72E500733ADB /* note1001.m4a */,
 				2E46E22B18DE72E500733ADB /* do.wav */,
 				2E46E22C18DE72E500733ADB /* fa.wav */,
@@ -194,7 +224,7 @@
 				2EE8550018DEA8E1002B20AE /* sol.wav */,
 				2E46E22E18DE72E600733ADB /* mi.wav */,
 				2E46E22F18DE72E600733ADB /* re.wav */,
-				2E46E23118DE72E600733ADB /* ti.wav */,
+				2E46E23118DE72E600733ADB /* small-ti.wav */,
 				2E86603F189551A300227BA2 /* SonicFitLogo2.png */,
 				2E86600D1895516800227BA2 /* SonicFit-Info.plist */,
 				2E86600E1895516800227BA2 /* InfoPlist.strings */,
@@ -292,20 +322,30 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E578EC718F0EAFC0037C8A9 /* 4C DO.mp3 in Resources */,
+				2E578EC218F0EAFC0037C8A9 /* 5A LA.mp3 in Resources */,
 				2E86608D1895DE1A00227BA2 /* SFProfileViewController.xib in Resources */,
 				2E8660101895516800227BA2 /* InfoPlist.strings in Resources */,
+				2E578EBF18F0EAFC0037C8A9 /* 5D high RE.mp3 in Resources */,
 				2E86603D1895518900227BA2 /* SFEarTrainingExerciseLevel1.xib in Resources */,
+				2E578EC318F0EAFC0037C8A9 /* 4G SOL.mp3 in Resources */,
+				2E578EC118F0EAFC0037C8A9 /* 5B TI.mp3 in Resources */,
 				2E866040189551A300227BA2 /* SonicFitLogo2.png in Resources */,
 				2E46E23418DE72E600733ADB /* fa.wav in Resources */,
 				2E46E23618DE72E600733ADB /* mi.wav in Resources */,
+				2E578EC018F0EAFC0037C8A9 /* 5C high DO.mp3 in Resources */,
 				2E46E23518DE72E600733ADB /* la.wav in Resources */,
 				2E8660881895D9A400227BA2 /* SFEarTrainingExerciseLevel2.xib in Resources */,
 				2E46E23318DE72E600733ADB /* do.wav in Resources */,
+				2E578EC518F0EAFC0037C8A9 /* 4E MI.mp3 in Resources */,
+				2E578EC818F0EAFC0037C8A9 /* 4B low TI.mp3 in Resources */,
 				2EE8550118DEA8E1002B20AE /* sol.wav in Resources */,
+				2E578EC618F0EAFC0037C8A9 /* 4D RE.mp3 in Resources */,
 				2E46E23718DE72E600733ADB /* re.wav in Resources */,
+				2E578EC418F0EAFC0037C8A9 /* 4F FA.mp3 in Resources */,
 				2E46E23218DE72E600733ADB /* note1001.m4a in Resources */,
 				2E8660181895516800227BA2 /* Images.xcassets in Resources */,
-				2E46E23918DE72E600733ADB /* ti.wav in Resources */,
+				2E46E23918DE72E600733ADB /* small-ti.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,8 +364,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EE8550418DEC2C2002B20AE /* SFExerciseNotes.m in Sources */,
 				2E8660901896174500227BA2 /* SFEarTrainingExercise.m in Sources */,
-				2E33093018B276E000EE320D /* SFMyRoundRectButton.m in Sources */,
 				2E86603C1895518900227BA2 /* SFEarTrainingExerciseViewController.m in Sources */,
 				2E86608C1895DE1A00227BA2 /* SFProfileViewController.m in Sources */,
 				2E8660121895516800227BA2 /* main.m in Sources */,
