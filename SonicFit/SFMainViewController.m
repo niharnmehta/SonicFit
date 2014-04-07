@@ -19,12 +19,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+//    if (indexPath.row == 0)
+//    {
+//        SFProfileViewController *profileViewController = [[SFProfileViewController alloc] init];
+//        [self.navigationController pushViewController:profileViewController animated:YES];
+//    }
+//    else
     if (indexPath.row == 0)
-    {
-        SFProfileViewController *profileViewController = [[SFProfileViewController alloc] init];
-        [self.navigationController pushViewController:profileViewController animated:YES];
-    }
-    else if (indexPath.row == 1)
     {
         SFEarTrainingExerciseViewController *exerciseVc = [[SFEarTrainingExerciseViewController alloc] initWithNibName:@"SFEarTrainingExerciseLevel2" bundle:nil];
         exerciseVc.level = 1;
@@ -33,10 +34,22 @@
 //        SFEarTrainingItemsViewController *etItemsViewController = [[SFEarTrainingItemsViewController alloc] init];
 //        [self.navigationController pushViewController:etItemsViewController animated:YES];
     }
-    else if (indexPath.row == 2)
+    else if (indexPath.row == 1)
     {
         SFEarTrainingExerciseViewController *exerciseVc = [[SFEarTrainingExerciseViewController alloc] initWithNibName:@"SFEarTrainingExerciseLevel2" bundle:nil];
         exerciseVc.level = 2;
+        [self.navigationController pushViewController:exerciseVc animated:YES];
+    }
+    else if (indexPath.row == 2)
+    {
+        SFEarTrainingExerciseViewController *exerciseVc = [[SFEarTrainingExerciseViewController alloc] initWithNibName:@"SFEarTrainingExerciseLevel2" bundle:nil];
+        exerciseVc.level = 3;
+        [self.navigationController pushViewController:exerciseVc animated:YES];
+    }
+    else if (indexPath.row == 3)
+    {
+        SFEarTrainingExerciseViewController *exerciseVc = [[SFEarTrainingExerciseViewController alloc] initWithNibName:@"SFEarTrainingExerciseLevel2" bundle:nil];
+        exerciseVc.level = 4;
         [self.navigationController pushViewController:exerciseVc animated:YES];
     }
 }
@@ -49,17 +62,25 @@
 //    BNRItem *item = items[indexPath.row];
 //    cell.textLabel.text = [item description];
 
+//    if (indexPath.row == 0)
+//    {
+//        cell.textLabel.text = @"Your Profile";
+//    }
     if (indexPath.row == 0)
-    {
-        cell.textLabel.text = @"Your Profile";
-    }
-    else if (indexPath.row == 1)
     {
         cell.textLabel.text = @"Ear Training Level 1";
     }
-    else if (indexPath.row == 2)
+    else if (indexPath.row == 1)
     {
         cell.textLabel.text = @"Ear Training Level 2";
+    }
+    else if (indexPath.row == 2)
+    {
+        cell.textLabel.text = @"Ear Training Level 3";
+    }
+    else if (indexPath.row == 3)
+    {
+        cell.textLabel.text = @"Ear Training Level 4";
     }
 
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
@@ -78,6 +99,13 @@
     {
         UINavigationItem *navItem = self.navigationItem;
         navItem.title = @"SonicFit";
+        
+        UIView *navView = self.view; // navItem.titleView;
+        UIGraphicsBeginImageContext(navView.frame.size);
+        [[UIImage imageNamed:@"SonicFitLogo2.png"] drawInRect:navView.bounds];
+        UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        navView.backgroundColor = [UIColor colorWithPatternImage:image];
         
 //        UIBarButtonItem *bbi = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addNewItem:)];
 //        

@@ -11,7 +11,7 @@
 #import "SFNote.h"
 #import "SFExerciseNotes.h"
 
-#define kStdButtonWidth		50.0
+#define kStdButtonWidth		55.0
 #define kStdButtonHeight	35.0
 #define kViewTag			1		// for tagging our embedded controls for removal at cell recycle time
 
@@ -20,10 +20,13 @@
 @property (weak, nonatomic) IBOutlet UILabel *userEnteredNotes;
 @property (weak, nonatomic) IBOutlet UILabel *successFailMessage;
 @property (weak, nonatomic) IBOutlet UILabel *correctNotes;
+@property (weak, nonatomic) IBOutlet UILabel *score;
 
 @property (nonatomic, readwrite) int currentNoteCount;
 @property (nonatomic) NSDictionary *notesDictionary;
 @property (nonatomic) SFExerciseNotes *exerciseNotes;
+@property (nonatomic, readwrite) int totalRightAnswers;
+@property (nonatomic, readwrite) int totalAnswers;
 @end
 
 
@@ -61,12 +64,15 @@
         if ([self.currentExercise.answer isEqualToString:usersAnswer])
         {
             self.successFailMessage.text = @"Congrats! You got it.";
+            self.totalRightAnswers++;
         }
         else
         {
             self.successFailMessage.text = @"Sorry! answer is:";
             self.correctNotes.text = self.currentExercise.answer;
         }
+        self.totalAnswers++;
+        self.score.text = [NSString stringWithFormat:@"Score: %d/%d", self.totalRightAnswers, self.totalAnswers];
     }
 }
 
@@ -137,6 +143,7 @@
                                                         notesDictionary:self.notesDictionary];
 
     [self cleanupInputs];
+    self.score.text = @"";
 }
 
 - (void)createNotesDictionary
@@ -166,6 +173,14 @@
     else if (level == 2)
     {
         [self addButtonsLevel2:view];
+    }
+    else if (level == 3)
+    {
+        [self addButtonsLevel3:view];
+    }
+    else if (level == 4)
+    {
+        [self addButtonsLevel4:view];
     }
 }
 
@@ -198,8 +213,35 @@
 
 - (void)addButtonsLevel2:(UIView *)view
 {
+    CGFloat y = 50.0;
+    NSArray *noteTitleArray = [NSArray arrayWithObjects:@"SOL", @"FA", @"MI", @"RE", @"DO", nil];
+    for (int i = 0; i < noteTitleArray.count; i++)
+    {
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
+        CALayer *btnLayer = [button layer];
+        [btnLayer setMasksToBounds:YES];
+        [btnLayer setCornerRadius:20.0f];
+		button.frame = CGRectMake(0.0, y, kStdButtonWidth, kStdButtonHeight);
+        y += (kStdButtonHeight + 10);
+        button.titleLabel.font = [UIFont systemFontOfSize:17];
+        button.titleLabel.textColor = [UIColor redColor];
+        NSString *title = [noteTitleArray objectAtIndex:i];
+        if (![title isEqualToString:@""])
+        {
+            [button setTitle:title forState:UIControlStateNormal];
+            [button addTarget:self action:@selector(notePressed:) forControlEvents:UIControlEventTouchUpInside];
+            button.backgroundColor = [UIColor cyanColor];
+            
+            button.tag = kViewTag;	// tag this view for later so we can remove it from recycled table cells
+            [view addSubview:button];
+        }
+	}
+}
+
+- (void)addButtonsLevel3:(UIView *)view
+{
     CGFloat y = 15.0;
-    NSArray *noteTitleArray = [NSArray arrayWithObjects:@"LA", @"SOL", @"FA", @"MI", @"RE", @"DO", nil];
+    NSArray *noteTitleArray = [NSArray arrayWithObjects:@"LA", @"SOL", @"FA", @"MI", @"RE", @"DO", @"TI", nil];
     for (int i = 0; i < noteTitleArray.count; i++)
     {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
@@ -219,22 +261,46 @@
         [view addSubview:button];
 	}
     
-    // add small TI
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
-    CALayer *btnLayer = [button layer];
-    [btnLayer setMasksToBounds:YES];
-    [btnLayer setCornerRadius:20.0f];
-    button.frame = CGRectMake(5.0, y, kStdButtonWidth - 10, kStdButtonHeight - 5);
-    y += (kStdButtonHeight + 10);
-    button.titleLabel.font = [UIFont systemFontOfSize:15];
-    button.titleLabel.textColor = [UIColor redColor];
-    NSString *title = @"TI";
-    [button setTitle:title forState:UIControlStateNormal];
-    [button addTarget:self action:@selector(notePressed:) forControlEvents:UIControlEventTouchUpInside];
-    button.backgroundColor = [UIColor cyanColor];
-    
-    button.tag = kViewTag;	// tag this view for later so we can remove it from recycled table cells
-    [view addSubview:button];
+//    // add small TI
+//    UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
+//    CALayer *btnLayer = [button layer];
+//    [btnLayer setMasksToBounds:YES];
+//    [btnLayer setCornerRadius:20.0f];
+//    button.frame = CGRectMake(5.0, y, kStdButtonWidth - 10, kStdButtonHeight - 5);
+//    y += (kStdButtonHeight + 10);
+//    button.titleLabel.font = [UIFont systemFontOfSize:15];
+//    button.titleLabel.textColor = [UIColor redColor];
+//    NSString *title = @"TI";
+//    [button setTitle:title forState:UIControlStateNormal];
+//    [button addTarget:self action:@selector(notePressed:) forControlEvents:UIControlEventTouchUpInside];
+//    button.backgroundColor = [UIColor cyanColor];
+//    
+//    button.tag = kViewTag;	// tag this view for later so we can remove it from recycled table cells
+//    [view addSubview:button];
+}
+
+- (void)addButtonsLevel4:(UIView *)view
+{
+    CGFloat y = 15.0;
+    NSArray *noteTitleArray = [NSArray arrayWithObjects:@"DO", @"TI", @"LA", @"SOL", @"FA", @"MI", @"RE", @"DO", @"TI", nil];
+    for (int i = 0; i < noteTitleArray.count; i++)
+    {
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
+        CALayer *btnLayer = [button layer];
+        [btnLayer setMasksToBounds:YES];
+        [btnLayer setCornerRadius:20.0f];
+		button.frame = CGRectMake(0.0, y, kStdButtonWidth, kStdButtonHeight);
+        y += (kStdButtonHeight + 10);
+        button.titleLabel.font = [UIFont systemFontOfSize:17];
+        button.titleLabel.textColor = [UIColor redColor];
+        NSString *title = [noteTitleArray objectAtIndex:i];
+		[button setTitle:title forState:UIControlStateNormal];
+		[button addTarget:self action:@selector(notePressed:) forControlEvents:UIControlEventTouchUpInside];
+        button.backgroundColor = [UIColor cyanColor];
+		
+		button.tag = kViewTag;	// tag this view for later so we can remove it from recycled table cells
+        [view addSubview:button];
+	}
 }
 
 - (void)didReceiveMemoryWarning

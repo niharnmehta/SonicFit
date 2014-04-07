@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SonicFit/SFEarTrainingExerciseViewController.m"
-            timestampString = "418442277.88266"
+            timestampString = "418530798.690468"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "248"
-            endingLineNumber = "248"
+            startingLineNumber = "314"
+            endingLineNumber = "314"
             landmarkName = "-viewDidLayoutSubviews"
             landmarkType = "5">
             <Locations>
@@ -88,11 +88,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SonicFit/SFEarTrainingExerciseViewController.m"
-            timestampString = "418442277.88266"
+            timestampString = "418530798.690468"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "176"
-            endingLineNumber = "176"
+            startingLineNumber = "191"
+            endingLineNumber = "191"
             landmarkName = "-addButtonsLevel1:"
             landmarkType = "5">
             <Locations>

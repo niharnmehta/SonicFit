@@ -14,5 +14,6 @@
 
 @property (nonatomic) NSArray *exerciseNotesArray1;
 @property (nonatomic) NSArray *exerciseNotesArray2;
+@property (nonatomic) NSArray *exerciseNotesArray3;
 
 @end
